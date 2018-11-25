@@ -5,7 +5,20 @@
 <title>Hello</title>
 </head>
 <body>
-	<h1>Hola <spam th:text="${person.name}"/></h1>
-	<h3>You'r age is <spam th:text="${person.age}"/></h3>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody th:each="person : ${people}">
+			<tr>
+				<th th:text="${person.name}"></th>
+				<th th:text="${person.age}"></th>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
